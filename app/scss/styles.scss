@@ -2,75 +2,90 @@
 
 $green:#688816;
 
+/*mixins*/
+
+@mixin large-text {
+    font-family: "Century Gothic", Arial, sans-serif;
+    padding:0;
+    margin:0;
+ }
+
+@mixin small-text {
+    font-family: "Century Gothic", Arial, sans-serif;
+    font-size: 90%;
+    padding:0;
+    margin:0;
+}
+
+
 /*header styling*/
 
-/*logo*/
-
-.logo {
-  background-image: url(../images/logo.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  min-width: 120px;
-  min-height: 120px;
-}
-
-.header {
+.heading {
     display: flex;
     flex-flow: row;
-    padding-left: 30px;
-}
+    margin-left: 2%;
+    padding:0;
+        
+    .logo {
+        background-image: url(../images/logo.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        min-width: 120px;
+        min-height: 120px;
+        }
+         /*logo text styling*/
+            .logo_text {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+                }
+        }
+              
+            h1{
+                @include large-text;
+                color: $green;
+                font-size: 4em;
+                padding:0;
+                margin:0;
+                }  
+    
+                h2 {
+                    @include large-text;
+                    color: $green;
+                    font-size: 2em;
+                    font-style: italic;
+                    padding:0;
+                    margin:0;
+                    }
 
-/*intro-styling*/
+/*Green-bar-styling*/
 
 .intro{
     display: flex;
     flex-flow: column;
-    color: white;
-    text-align: center;
     background-color: $green;
-}
+    margin:0;
+    padding: 0, 0, 1em, 0;
+    width: 100%;
+    
+        h3 {
+            @include large-text;
+            color: white;
+            font-size: 20px;
+            padding:0;
+            margin: 1em 0em 0em 1em;
+            text-align: center;
+            font-weight: normal;
+            }
 
-/*text styling*/
-
-h1 {
-  color: $green;
-  font-family: sans-serif;
-  font-size: 4em;
-  padding: 0;
-  margin: 0;
-}
-
-h2 {
-  color: $green;
-  font-family: sans-serif;
-  font-size: 2em;
-  padding: 2;
-  margin: 0;
-}
-
-h3 {
-  font-family: serif;
-  font-size: 2em;
-  margin: 0px 0px 0px 20px;
-}
-
-h4 {
-  font-family: sans-serif;
-  font-size: 1, 5em;
-  margin: 0em 0em 0em 1em;
-}
-
-p {
-  font-family: "arial", sans-serif;
-  font-size: 90%;
-  margin: 10px 0px 10px 20px;
-}
-
-/*dividing line styling*/
-
-hr {
-  width: 95%;
-  border-color: #688816;
+             p {
+                @include small-text;
+                color: white;
+                text-align: center;
+                padding-bottom: 1em;
+                padding-top: 1em;
+                }
 }
 
 /*Main area styling*/
@@ -81,36 +96,44 @@ section {
     justify-content: center;
     flex-flow: column;
 }
-
-article {
-    display: flex;
-    flex-flow: column wrap;
-    margin: 0;
-}
-
 /* photo section styling*/
 
-.foton {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-}
+        .foton {
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+            padding: 10px;
+       
 
-.foto{
-    margin: 4px;
-    border-style: solid;
-    border-color: black;
-    border-width: 1px
-}
+            .foto{
+                margin: 4px;
+                border-style: solid;
+                border-color: $green;
+                border-width: 2px;
+                padding: 10px;
+                }
+            }
+
 
 /*student discount section styling*/
 
 .student{
     background-color: $green;
     background:lighten($green, 30%);
-    color: beige;
     border-radius: 7px;
-    padding: 10px;
+    padding: 20px;
+        
+        h2 {
+            @include large-text;
+            color: black;
+            font-size: 23px;
+            font-style: italic;
+        }
+    
+        p {
+            @include small-text;
+            color: black;
+        }
 }
 
 /*contact section styling*/
@@ -119,19 +142,33 @@ article {
     display: flex;
     flex-flow: column;
     align-items: center;
-  border-style: solid;
-  border-width: 2px;
-  border-color: $green;
-  padding: 5px;
-  width: 33vw;
-  min-width: 300px;
-    margin-top: 10px;
-  margin-bottom: 10px;
+    width: 33vw;
+    min-width: 300px;        
+    margin: 25px;
+    border-style: solid;
+    border-color: $green;
+    border-width: 2px;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
+    
+        .contact-text {
+          padding: 5px;
+        }
+            
+            h2 {
+                @include large-text;
+                color: $green;
+                font-size: 23px;
+                }
+            p{
+                @include small-text;
+                padding-top: 5px;
+                padding-bottom: 10px;
+            }
 
-.contact-text {
-  padding: 5px;
-}
+
 /*form styling*/
 
 form {
@@ -164,13 +201,7 @@ textarea {
 /*footer styling*/
 
 footer {
-    display: flex;
-    justify-content: center;
-  width: 100 vw;
-  background-color: $green;
-  height: 20vh;
-  color: white;
-  text-align: center;
+    @extend .intro;
 }
 
 @media (min-width: 600px){
