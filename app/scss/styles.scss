@@ -59,7 +59,7 @@ $green:#688816;
                     margin:0;
                     }
 
-/*Green-bar-styling*/
+  /*Green-bar-styling*/
 
 .intro{
     display: flex;
@@ -114,7 +114,6 @@ section {
                 }
             }
 
-
 /*student discount section styling*/
 
 .student{
@@ -142,7 +141,7 @@ section {
     display: flex;
     flex-flow: column;
     align-items: center;
-    width: 33vw;
+    width: 30vw;
     min-width: 300px;        
     margin: 25px;
     border-style: solid;
@@ -152,9 +151,11 @@ section {
     padding-top: 15px;
     padding-bottom: 15px;
 }
-    
+    .map{
+        box-shadow: 5px 5px 5px #888888;
+        }
         .contact-text {
-          padding: 5px;
+          padding: 7px;
         }
             
             h2 {
@@ -164,8 +165,8 @@ section {
                 }
             p{
                 @include small-text;
-                padding-top: 5px;
-                padding-bottom: 10px;
+                padding-top: 8px;
+                padding-bottom: 12px;
             }
 
 
