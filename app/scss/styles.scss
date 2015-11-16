@@ -175,28 +175,27 @@ form {
     display: flex;
     flex-flow: column;
     justify-content: center;
-}
 
-.cta {
-  width: 90%;
-  color: white;
-  background: $green;
-  text-decoration: none;
-  padding: 10px;
-  display: inline-block;
-  text-align: center;
-}
+        input {
+          width: 90%;
+          margin-bottom: 7px;
+          border: 0, 5;
+          border-color: slategrey;
+          padding: 5px;
+          background: white;
+          line-height: 20px;
+          font-size: 20px;
+        }
 
-input,
-textarea {
-  width: 90%;
-  margin-bottom: 7px;
-  border: 0, 5;
-  border-color: slategrey;
-  padding: 5px;
-  background: white;
-  line-height: 20px;
-  font-size: 20px;
+        .send {
+          width: 90%;
+          color: white;
+          background: $green;
+          text-decoration: none;
+          padding: 10px;
+          display: inline-block;
+          text-align: center;
+        }
 }
 /*footer styling*/
 
