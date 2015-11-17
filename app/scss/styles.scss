@@ -2,21 +2,31 @@
 
 $green:#688816;
 
+$light_green:#b3c38a;
+
+body{
+    height:100%;
+    background: linear-gradient(0deg, $green, white) no-repeat;
+    padding: 2%;
+    /*font-size: 2 em;*/
+}
+
 /*mixins*/
 
 @mixin large-text {
-    font-family: "Century Gothic", Arial, sans-serif;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
     padding:0;
     margin:0;
  }
 
 @mixin small-text {
-    font-family: "Century Gothic", Arial, sans-serif;
-    font-size: 90%;
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    /*font-size: 90%;*/
     padding:0;
     margin:0;
 }
-
 
 /*header styling*/
 
@@ -30,64 +40,71 @@ $green:#688816;
         background-image: url(../images/logo.png);
         background-repeat: no-repeat;
         background-size: 100%;
-        min-width: 120px;
-        min-height: 120px;
+        min-width: 100px;
+        min-height: 100px;
+        padding:0;
         }
          /*logo text styling*/
-            .logo_text {
+            .logo_text_box {
                 display: flex;
                 flex-direction: column;
                 margin: 0;
                 padding: 0;
                 }
-        }
-              
-            h1{
-                @include large-text;
-                color: $green;
-                font-size: 4em;
-                padding:0;
-                margin:0;
-                }  
-    
-                h2 {
-                    @include large-text;
+                
+                .logo_text{
+                    font-family:Georgia, serif; 
+                    font-style: italic; 
+                    font-weight: bold;
                     color: $green;
-                    font-size: 2em;
-                    font-style: italic;
+                    font-size: 300%;
                     padding:0;
                     margin:0;
                     }
-
-  /*Green-bar-styling*/
-
-.intro{
-    display: flex;
-    flex-flow: column;
-    background-color: $green;
-    margin:0;
-    padding: 0, 0, 1em, 0;
-    width: 100%;
-    
-        h3 {
-            @include large-text;
-            color: white;
-            font-size: 20px;
-            padding:0;
-            margin: 1em 0em 0em 1em;
-            text-align: center;
-            font-weight: normal;
-            }
-
-             p {
-                @include small-text;
-                color: white;
-                text-align: center;
-                padding-bottom: 1em;
-                padding-top: 1em;
-                }
+                h2{
+                    @include small-text;
+                    font-size: 140%;
+                    color: black;
+        }
 }
 
+.intro {
+    display: flex;
+    flex-flow: column;
+    padding: 2%;
+    max-width: 600px;
+        }
+
+                h3 {
+                    @include large-text;
+                    color: black;
+                    font-size: 200%;
+                    padding:0;
+                    margin: 0;
+                    }
+
+                     p {
+                        @include small-text;
+                        color: black;
+                          padding: 0;
+                        }
+
+                        .social_media{
+                          display: flex;
+                          align-items: baseline; 
+                          justify-content:flex-end;
+                        padding-top:0;                         margin:0;
+                        }
+
+                .fa-facebook-square,
+                .fa-twitter-square,
+                .fa-instagram {
+                    padding-right: 1em;
+                    font-size: 2em;
+                    color:$green;
+                    @media (max-width: 600px){display: none;
+                    }
+                }
 /*Main area styling*/
 
 section {
@@ -96,13 +113,21 @@ section {
     justify-content: center;
     flex-flow: column;
 }
+    
+    .foto_and_student{
+        display: flex;
+        flex-flow: column;
+}
 /* photo section styling*/
 
         .foton {
             display: flex;
             flex-direction: row;
+            justify-content: space-between;
             margin-top: 10px;
-            padding: 10px;
+            padding: 0px;
+            max-width: 600px;
+            margin:0;
        
 
             .foto{
@@ -110,7 +135,7 @@ section {
                 border-style: solid;
                 border-color: $green;
                 border-width: 2px;
-                padding: 10px;
+                padding: 5px;
                 }
             }
 
@@ -118,11 +143,12 @@ section {
 
 .student{
     background-color: $green;
-    background:lighten($green, 30%);
+    background:lighten($green, 50%);
     border-radius: 7px;
     padding: 20px;
+    margin: 2%;
         
-        h2 {
+        .student_text {
             @include large-text;
             color: black;
             font-size: 23px;
@@ -143,7 +169,7 @@ section {
     align-items: center;
     width: 30vw;
     min-width: 300px;        
-    margin: 25px;
+    margin:0;
     border-style: solid;
     border-color: $green;
     border-width: 2px;
@@ -165,7 +191,7 @@ section {
                 }
             p{
                 @include small-text;
-                padding-top: 8px;
+                padding-top: 10px;
                 padding-bottom: 12px;
             }
 
@@ -189,20 +215,33 @@ form {
         }
 
         .send {
-          width: 90%;
+        @include small_text;
+          width: 87%;
           color: white;
           background: $green;
           text-decoration: none;
           padding: 10px;
           display: inline-block;
           text-align: center;
+        border-style: solid;
+            border-width: 1px;
+            border-color: black;
         }
 }
 /*footer styling*/
 
 footer {
-    @extend .intro;
+    display:flex;
+    justify-content: center;
+    margin-top: 3%;
 }
+
+p.foot_text{
+    @include small-text;
+    color: white;
+    text-align: center;
+}
+    
 
 @media (min-width: 600px){
     section{
