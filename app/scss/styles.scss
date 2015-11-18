@@ -1,8 +1,7 @@
 /*Variabel*/
 
-$green:#688816;
+@import 'colors';
 
-$light_green:#b3c38a;
 
 body{
     height:100%;
@@ -91,7 +90,6 @@ body{
 }
 
 /*link styling*/
-
 a:link, a:visited {
     display: block;
     color: white;
