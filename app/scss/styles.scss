@@ -1,16 +1,31 @@
-/*Variabel*/
+/*Importing variables from another sheet*/
 
 @import 'colors';
 
+/*Sass mall*/
+%button {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    margin:0;
+    width: 87%;
+    color: white;
+    background: $green;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
 
+/*Background gradient*/
 body{
     height:100%;
     background: linear-gradient(0deg, $light_green, white) no-repeat;
-    /*font-size: 2 em;*/
 }
 
 /*mixins*/
-
 @mixin large-text {
     font-family: "Lato", sans-serif;
     font-weight: 900;
@@ -33,6 +48,7 @@ header {
   justify-content: flex-start;
 }
 
+/*Logo styling*/
 .logo_text_box {
                 display: flex;
                 flex-direction: column;
@@ -56,7 +72,7 @@ header {
                     color: black;
             }
 
-
+/*Dividing line styling*/
 .line{
     border-style: solid;
     border-color: $light_green;
@@ -65,7 +81,6 @@ header {
 }
 
 /*menu styling*/
-
 ul,
 li {
   list-style: none;
@@ -88,38 +103,36 @@ header {
   font-size: 2em;
   padding: 0.5em;
 }
-/* Däljer checkboxen fär menyn*/
+/*Hiding checkbox*/
 
 #nav-toggle {
   display: none;
 }
-/* Döljer Font icon Krysset i default läge */
 
+/*Hiding Font Icon*/
 #nav-toggle,
 .fa-times {
   display: none;
 }
-/* Visar menu för  mobil i när checkboxen är checked läge */
 
+/*Making menu visible for mobile when checked*/
 #nav-toggle:checked + #wrapper nav {
   display: block;
 }
-/* Döljer font icon Bar när checkboxen är checked läge */
-
+/*Hiding Font Icon when checked */
 #nav-toggle:checked + #wrapper header .fa-bars {
   display: none;
 }
-/* Visar font icon krysset när checkboxen är i checked läge */
-
+/*Making Font Icon visible*/
 #nav-toggle:checked + #wrapper header .fa-times {
   display: block;
 }
-/* Döljer menyn för mobil i default läge */
+/*Hiding menu by default for mobile*/
 
+/*menu styling*/
 nav {
   display: none;
 }
-/*För mobilen så sätter vi menyn på display:flex och flex-flow:column wrap för att visa menyn i en kolumn*/
 
 nav ul {
   margin: 0;
@@ -148,13 +161,12 @@ nav > ul > li:visited > a {
   color: white;
 }
 
+/*Media Query*/
 @media all and (min-width: 630px) {
-  /* Döljer meny trigger för desktop */
   
   header > label {
     display: none;
   }
-  /* visar menyn för desktop */
   
   nav {
     display: block;
@@ -200,12 +212,12 @@ section {
     flex-flow: column;
     padding:0;
 }
-    
+
+/* photo section styling*/
     .foto_and_student{
         display: flex;
         flex-flow: column;
-}
-/* photo section styling*/
+                    }
 
         .foton {
             display: flex;
@@ -217,7 +229,6 @@ section {
             max-width: 600px;
             margin:0;
        
-
             .foto{
                 margin: 4px;
                 border-style: solid;
@@ -265,6 +276,8 @@ section {
     padding-top: 15px;
     padding-bottom: 15px;
 }
+
+/*Map styling*/
     .map{
         box-shadow: 5px 5px 5px #888888;
         }
@@ -303,17 +316,7 @@ form {
         }
 
         .send {
-            @include small_text;
-            width: 87%;
-            color: white;
-            background: $green;
-            text-decoration: none;
-            padding: 10px;
-            display: inline-block;
-            text-align: center;
-            border-style: solid;
-            border-width: 1px;
-            border-color: black;
+            @extend %button;
             }
 }
 /*footer styling*/
@@ -337,6 +340,7 @@ p.foot_text{
     padding-top:0;                           margin:0;
 }
 
+/*Social media icons*/
     .fa-facebook-square,
     .fa-twitter-square,
     .fa-instagram {
@@ -345,10 +349,12 @@ p.foot_text{
         padding-top:0;
         font-size: 1.7em;
         color:white;
+        /*Hiding social media Icons on mobile*/
         @media (max-width: 600px){display: none;
     }
     }
 
+/*Media query*/
 @media (min-width: 600px){
     section{
     flex-flow: row;
