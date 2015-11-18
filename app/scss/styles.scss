@@ -88,23 +88,6 @@ body{
                         color: black;
                           padding: 0;
                         }
-
-                        .social_media{
-                          display: flex;
-                          align-items: baseline; 
-                          justify-content:flex-end;
-                        padding-top:0;                         margin:0;
-                        }
-
-                .fa-facebook-square,
-                .fa-twitter-square,
-                .fa-instagram {
-                    padding-right: 1em;
-                    font-size: 2em;
-                    color:$green;
-                    @media (max-width: 600px){display: none;
-                    }
-                }
 /*Main area styling*/
 
 section {
@@ -241,7 +224,23 @@ p.foot_text{
     color: white;
     text-align: center;
 }
-    
+.social_media{
+    display:flex;
+    align-items: baseline; 
+    padding-top:0;                           margin:0;
+}
+
+    .fa-facebook-square,
+    .fa-twitter-square,
+    .fa-instagram {
+        padding: 1em;
+        padding-bottom: 0;
+        padding-top:0;
+        font-size: 1.7em;
+        color:white;
+        @media (max-width: 600px){display: none;
+    }
+    }
 
 @media (min-width: 600px){
     section{
