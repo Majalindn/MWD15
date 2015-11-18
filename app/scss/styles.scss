@@ -28,22 +28,12 @@ body{
 
 /*header styling*/
 
-.heading {
-    display: flex;
-    flex-flow: row;
-    margin-left: 2%;
-    padding:0;
-        
-    .logo {
-        background-image: url(../images/logo.png);
-        background-repeat: no-repeat;
-        background-size: 100%;
-        min-width: 100px;
-        min-height: 100px;
-        padding:0;
-        }
-         /*logo text styling*/
-            .logo_text_box {
+header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logo_text_box {
                 display: flex;
                 flex-direction: column;
                 margin: 0;
@@ -59,12 +49,13 @@ body{
                     padding:0;
                     margin:0;
                     }
-                h2{
+
+                .psyko_text{
                     @include small-text;
                     font-size: 140%;
                     color: black;
-        }
-}
+            }
+
 
 .line{
     border-style: solid;
@@ -75,46 +66,107 @@ body{
 
 /*menu styling*/
 
+ul,
+li {
+  list-style: none;
+}
+
 .menu_items {
-    @include small_text;
-   color: black;
-  text-align: center;
   padding: 1% 3% 1% 3%;
   background: #b3c38a;
   margin: 0em 1em 0em 1em;
  }
-.menu_container {
+
+header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+}
+ 
+.fa-times,
+.fa-bars {
+  color: $green;
+  font-size: 2em;
+  padding: 0.5em;
+}
+/* Däljer checkboxen fär menyn*/
+
+#nav-toggle {
+  display: none;
+}
+/* Döljer Font icon Krysset i default läge */
+
+#nav-toggle,
+.fa-times {
+  display: none;
+}
+/* Visar menu för  mobil i när checkboxen är checked läge */
+
+#nav-toggle:checked + #wrapper nav {
+  display: block;
+}
+/* Döljer font icon Bar när checkboxen är checked läge */
+
+#nav-toggle:checked + #wrapper header .fa-bars {
+  display: none;
+}
+/* Visar font icon krysset när checkboxen är i checked läge */
+
+#nav-toggle:checked + #wrapper header .fa-times {
+  display: block;
+}
+/* Döljer menyn för mobil i default läge */
+
+nav {
+  display: none;
+}
+/*För mobilen så sätter vi menyn på display:flex och flex-flow:column wrap för att visa menyn i en kolumn*/
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
   flex-flow: column wrap;
 }
 
-/*link styling*/
-a:link, a:visited {
+nav ul a {
+  @include small_text;
+  font-size: 1.2em;
+  text-align: center;
+   color: black;
     display: block;
-    color: white;
     text-align: center;
     padding: 0.2em;
     text-decoration: none;
 }
 
-a:hover, a:active {
-    color:$green;
+nav > ul > li:hover > a {
+  color: white;
 }
 
+nav > ul > li:visited > a {
+  color: white;
+}
 
-@media (min-width: 816px) {
-  .container {
+@media all and (min-width: 630px) {
+  /* Döljer meny trigger för desktop */
+  
+  header > label {
+    display: none;
+  }
+  /* visar menyn för desktop */
+  
+  nav {
+    display: block;
+  }
+  
+  nav ul {
     flex-flow: row wrap;
-    /*for desktop*/
+    justify-content: flex-end;
   }
-  .menu_container {
-    flex-flow: row wrap;
-  }
-  .menu_items{
-    border-radius: 20px 20px 0px 0px;
-  }
-
+  
+  .menu_items { 
+    border-radius: 20px 20px 0px 0px;}
 }
 
 /*intro text styling*/

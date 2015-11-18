@@ -17,50 +17,53 @@
 </head>
 
 <body>
-  <header>
-    <!--Logotype-->
-    <div class="heading">
-      <span class="logo">
-          </span>
-      <!--logo text-->
-      <div class="logo_text_box">
-          <h1 class="logo_text">Mitt liv</h1>
-        <h2>Psykoterapeuter</h2>
-      </article>
-      </div>
-      </div>
-      
-       <!--menu-->
- <nav>
-  <div class="menu_container">
-    <div class="menu_items"><a href="#">Om oss</a></div>
-    <div class="menu_items"><a href="#">Student</a></div>
-      <div class="menu_items"><a href="#">Priser</a></div>
-     </div>
-  </div>
-</nav>
-    </header>
-
-   <hr class="line">
    
+   <!--invisible checkbox-->
+    <input type="checkbox" id="nav-toggle">
+        <div id="wrapper">
+            <header>
+               
+               <!--logo-->
+                <img src="images/logo.png" height="100" width="100">
+                <div class="logo_text_box"><h1 class="logo_text">Mitt liv</h1>
+                <h2 class="psyko_text">psykoterapeuter</h2>
+                </div>
+                
+                <!--hamburger and cross-->
+                <label for="nav-toggle"><i class="fa fa-bars"></i><i class="fa fa-times"></i></label>
+            </header>
+            
+            <!--menu-->
+    <nav>
+    	 <ul>
+            <li class="menu_items"><a href="#">Om oss</a></li>
+            <li class="menu_items"><a href="#">Student</a></li>
+            <li class="menu_items"><a href="#">Priser</a></li>
+      	 </ul>
+    </nav>
+</div>
+   
+<!--dividing line-->
+   <hr class="line">
+
+<!--intro text-->   
 <article class="intro">
           <h3>Behöver du någon som lyssnar?</h3>
           <p>Kanske du inte känner dig sjuk utan bara behöver någon att samtala med? Hos oss bokar du enkelt samtalstid. Vi är ett privat alternativ med lång erfarenhet av att hjälpa människor genom samtal.</p>
 </article>
 
-  <section>
-   <div class="foto_and_student">
-    <article class="foton">
-      <div class="foto">
-       <img src="images/Foto2_Mitt-liv.jpg" height="100%" width="100%"/>
-       <h2>Kristina Svensson</h2><p>Presentation Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed aliqua.  doloremque laudantium. </p>
-        </div>
-
 <!--photos-->
+  <section>
+        <div class="foto_and_student">
+            <article class="foton">
+              <div class="foto">
+       <img src="images/foto1_mitt_liv.jpg" height="100%" width="100%"/>
+       <h2 class="psyko_text">Kristina Svensson</h2><p>Presentation Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed aliqua.  doloremque laudantium. </p>
+        </div>
         
         <div class="foto">
-       <img src="images/foto1_mitt_liv.jpg" height="100%" width="100%"/>
-       <h2>Anna Cabak Redéi</h2><p>Presentation Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed aliqua.  doloremque laudantium.</p>
+       <img src= "images/Foto2_Mitt-liv.jpg" height="100%" width="100%"/>
+       <h2 class="psyko_text">Anna Cabak Redéi</h2><p>Presentation Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed aliqua.  doloremque laudantium.</p>
         </div>
       </article>
 
@@ -93,13 +96,13 @@
   </section>
 
   <!--footer-->
-
-  <footer>
+<footer>
     <p class="foot_text">Telefon: 0727-063651
       <br>Vi har telefontid mellan 08.30 och 11.00 måndag till fredag.
       <br> maja.lindn@gmail.com
       </p>
-      <!--social media icons-->
+      
+               <!--social media icons-->
                 <div class="social_media">
                 <i class="fa fa-facebook-square"></i>
                 <i class="fa fa-twitter-square"></i>
